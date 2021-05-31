@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>テスト</title>
+    </head>
+    <body>
+      <form action = "/" method = "POST">
+         <H1>登録データ検索アプリケーション</H1>
+         <div style="border: #ffb6c1 solid 1px; font-size: 100%; padding: 20px;">
+
+         <h1>入力</h1>
+         <p>検索条件<br>
+            <input type="radio" name="search_kind" value="なし"checked>なし
+            <input type="radio" name="search_kind" value="入庫">入庫
+            <input type="radio" name="search_kind" value="出庫">出庫
+         </p>
+         <label for="searchdate">検索日付を入力</label>
+         <input type="date" name="searchdate" id="searchdate">
+         <br>
+         <button type="submit">検索</button>
+
+         </div>
+      </form>
+         <br>
+         <div style="border: #ffb6c1 solid 1px; font-size: 100%; padding: 20px;">
+            <h1>出力</h1>
+            <p>{{text}}</p>
+         </div>
+
+   </body>
+</html>

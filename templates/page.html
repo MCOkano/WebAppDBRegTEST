@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>テスト</title>
+    </head>
+    <body>
+      <form action = "/" method = "POST">
+         <H1>登録データ登録アプリケーション</H1>
+         <div style="border: #ffb6c1 solid 1px; font-size: 100%; padding: 20px;">
+
+            <h1>入力</h1>
+            <label for="input_id">登録ＩＤを入力</label>
+            <input type="number" name="input_id" id="input_id" min="1">
+            <br>
+            <p>登録種別<br>
+               <input type="radio" name="kind" value="入庫"checked>入庫
+               <input type="radio" name="kind" value="出庫">出庫
+            </p>
+            <p>内容<br>
+               <textarea type="text" name="input_data" placeholder="内容を入力"></textarea>
+            </p>
+            <button type="submit">登録</button>
+   
+         </div>
+      </form>
+      <br>
+      <div style="border: #ffb6c1 solid 1px; font-size: 100%; padding: 20px;">
+
+         <h1>出力</h1>
+         <p>{{text}}</p>
+         <p>{{text2}}</p>
+
+      </div>
+
+   </body>
+</html>

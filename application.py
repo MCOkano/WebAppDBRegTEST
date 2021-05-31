@@ -36,12 +36,12 @@ def main_page_GET():
 @app.route("/", methods=["POST"])
 def main_page_POST():
 
-#    cn,cur = connectSQL()
+    cn,cur = connectSQL()
 
-#    cur.execute("select * from Table_D_テストテーブル")
-#    rows = cur.fetchall()
-    rows = [[1,'2021-05-01','入庫','AAAA'],[2,'2021-05-02','入庫','BBBB'],[3,'2021-05-01','出庫','CCCC'],[4,'2021-05-03','入庫','DDDD'],[5,'2021-05-01','出庫','EEEE'],[6,'2021-05-02','入庫','FFFF'],[7,'2021-05-04','出庫','GGGG']]
-#    closeSQL(cur,cn)
+    cur.execute("select * from Table_D_テストテーブル")
+    rows = cur.fetchall()
+#    rows = [[1,'2021-05-01','入庫','AAAA'],[2,'2021-05-02','入庫','BBBB'],[3,'2021-05-01','出庫','CCCC'],[4,'2021-05-03','入庫','DDDD'],[5,'2021-05-01','出庫','EEEE'],[6,'2021-05-02','入庫','FFFF'],[7,'2021-05-04','出庫','GGGG']]
+    closeSQL(cur,cn)
 
     rows2 = []
 
@@ -64,11 +64,11 @@ def main_page_POST():
         print("DBに登録")
         text2 ="登録しました。 種別：" + kind + "　　登録日：" + reg_date + "　　登録内容：" + input_data  
 
-#        cn,cur = connectSQL()
+        cn,cur = connectSQL()
         sql = "INSERT INTO Table_D_テストテーブル (ID,日付,種別,内容) VALUES (%d,%s,%s,%s)"
         val = (int(input_id), reg_date, kind, input_data)
-#        cur.execute(sql, val)
-#        closeSQL(cur,cn)
+        cur.execute(sql, val)
+        closeSQL(cur,cn)
 
         return render_template("page.html",text=text,text2=text2)
 

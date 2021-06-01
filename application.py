@@ -64,14 +64,14 @@ def main_page_POST():
         print("DBに登録")
         text2 ="登録しました。 種別：" + kind + "　　登録日：" + reg_date + "　　登録内容：" + input_data  
 
-#        cn,cur = connectSQL()
+        cn,cur = connectSQL()
 #        sql = "INSERT INTO [dbo].[Table_D_テストテーブル] ([ID],[日付],[種別],[内容]) VALUES (%x,%s,%s,%s)"
 #        val = (int(input_id), reg_date, kind, input_data)
 #        cur.execute(sql, val)
-#        cur.execute("INSERT INTO Table_D_テストテーブル ([ID],[日付],[種別],[内容]) VALUES (15,"2021-05-10","入庫","abcdef")")
+        cur.execute("INSERT INTO Table_D_テストテーブル (ID,日付,種別,内容) VALUES (15,"2021-05-10","入庫","abcdef")")
 
 
-#        closeSQL(cur,cn)
+        closeSQL(cur,cn)
 
         return render_template("page.html",text=text,text2=text2)
 

@@ -68,7 +68,7 @@ def main_page_POST():
 #        sql = "INSERT INTO [dbo].[Table_D_テストテーブル] ([ID],[日付],[種別],[内容]) VALUES (%x,%s,%s,%s)"
 #        val = (int(input_id), reg_date, kind, input_data)
 #        cur.execute(sql, val)
-        cur.execute("INSERT INTO [dbo].[Table_D_テストテーブル] (ID,日付,種別,内容) VALUES (1,"2021-05-10","入庫","abcdef")")
+        cur.execute("INSERT INTO [dbo].[Table_D_テストテーブル] (ID,日付,種別,内容) VALUES (15,"2021-05-10","入庫","abcdef")")
 
 
         closeSQL(cur,cn)

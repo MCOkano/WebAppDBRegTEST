@@ -49,16 +49,16 @@ def main_page_POST():
     kind = request.form["kind"]
     reg_date = str(datetime.date.today())
     input_data = request.form["input_data"]
-    print("登録ID：" + input_id)
+    print("注文番号：" + input_id)
     print("種別：" + kind)
     print("登録日：" + reg_date)
     print("登録内容：" + input_data)
 
     if input_id != "":
-        text = "入力された登録ＩＤは" + input_id + "です。"
+        text = "入力された注文番号は" + input_id + "です。"
         for r in rows:
-            if int(input_id) == r[0]:
-                text2 ="入力したＩＤが重複しています。"
+            if input_id == r[4]:
+                text2 ="入力した注文番号が重複しています。"
                 return render_template("page.html",text=text,text2=text2)
 
         print("DBに登録")
@@ -69,9 +69,9 @@ def main_page_POST():
 #        val = (int(input_id), reg_date, kind, input_data)
 #        cur.execute(sql, val)
         cur.execute("""
-        INSERT INTO Table_D_テストテーブル (ID,日付,種別,内容)
+        INSERT INTO Table_D_テストテーブル (注文番号,日付,種別,内容)
         VALUES (?,?,?,?)""",
-        int(input_id), reg_date, kind, input_data)
+        input_id, reg_date, kind, input_data)
         cur.commit()
 
         closeSQL(cur,cn)
